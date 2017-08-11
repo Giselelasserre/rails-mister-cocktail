@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :cocktails, only: [:show, :index, :new, :create] do
-    resources :doses, only: [:create, :destroy]
+    resources :doses, only: [:create ]
   end
-  resources :ingredients, only: [:show]
 
+  resources :doses, only: [:destroy]
   root "cocktails#index"
+  # Your app does not have any route for /. Add one!
 end
